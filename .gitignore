@@ -3,5 +3,5 @@ node_modules
 .parcel-cache
 
 # Output
-dashboard
-graphics
+/dashboard
+/graphics
