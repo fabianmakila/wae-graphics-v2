@@ -6,9 +6,11 @@
     "postinstall": "include-nodecg postinstall",
     "dev": "include-nodecg start",
     "build:graphics": "parcel build src/graphics/*.html --dist-dir graphics --public-url ./",
+    "watch:graphics": "parcel watch src/graphics/*.html --dist-dir graphics --public-url ./",
     "build:dashboard": "parcel build src/dashboard/*.html --dist-dir dashboard --public-url ./",
     "watch:dashboard": "parcel watch src/dashboard/*.html --dist-dir dashboard --public-url ./",
-    "build": "concurrently 'pnpm:build:*'"
+    "build": "concurrently 'pnpm:build:*'",
+    "watch": "concurrently 'pnpm:watch:*'"
   },
   "license": "ISC",
   "dependencies": {
@@ -42,6 +44,13 @@
         "title": "Clock",
         "width": 2,
         "file": "clock.html"
+      }
+    ],
+    "graphics": [
+      {
+        "file": "schedule.html",
+        "width": 1920,
+        "height": 1080
       }
     ]
   }

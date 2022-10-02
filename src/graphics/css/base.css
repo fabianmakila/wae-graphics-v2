@@ -3,10 +3,7 @@
 @tailwind utilities;
 
 body {
-    @apply bg-mid;
+    @apply bg-gray-900;
     @apply text-white;
-}
-
-.grid-cols-schedule {
-    grid-template-columns: 1fr 3fr;
+    @apply h-screen;
 }

@@ -10,31 +10,34 @@
 </head>
 <body class="p-4">
     <div class="flex flex-col gap-4">
-        <div class="flex gap-4">
-            <div class="flex flex-col gap-2 w-1/4">
-                <h1 class="font-bold">Time</h1>
-                <input class="rounded w-full p-2 bg-light border-white outline-sky-600 outline-2 focus:outline focus:bg-dark" type="text" placeholder="00:00">
-                <input class="rounded w-full p-2 bg-light border-white outline-sky-600 outline-2 focus:outline focus:bg-dark" type="text" placeholder="00:00">
-                <input class="rounded w-full p-2 bg-light border-white outline-sky-600 outline-2 focus:outline focus:bg-dark" type="text" placeholder="00:00">
-                <input class="rounded w-full p-2 bg-light border-white outline-sky-600 outline-2 focus:outline focus:bg-dark" type="text" placeholder="00:00">
-                <input class="rounded w-full p-2 bg-light border-white outline-sky-600 outline-2 focus:outline focus:bg-dark" type="text" placeholder="00:00">
-                <input class="rounded w-full p-2 bg-light border-white outline-sky-600 outline-2 focus:outline focus:bg-dark" type="text" placeholder="00:00">
-            </div>
-            <div class="flex flex-col gap-2  w-3/4">
-                <h1 class="font-bold">Program</h1>
-                <input class="rounded w-full p-2 bg-light border-white outline-sky-600 outline-2 focus:outline focus:bg-dark" type="text" placeholder="Ohjelmaa">
-                <input class="rounded w-full p-2 bg-light border-white outline-sky-600 outline-2 focus:outline focus:bg-dark" type="text" placeholder="Ohjelmaa">
-                <input class="rounded w-full p-2 bg-light border-white outline-sky-600 outline-2 focus:outline focus:bg-dark" type="text" placeholder="Ohjelmaa">
-                <input class="rounded w-full p-2 bg-light border-white outline-sky-600 outline-2 focus:outline focus:bg-dark" type="text" placeholder="Ohjelmaa">
-                <input class="rounded w-full p-2 bg-light border-white outline-sky-600 outline-2 focus:outline focus:bg-dark" type="text" placeholder="Ohjelmaa">
-                <input class="rounded w-full p-2 bg-light border-white outline-sky-600 outline-2 focus:outline focus:bg-dark" type="text" placeholder="Ohjelmaa">
-            </div>
+        <div class="grid grid-cols-schedule gap-2">
+            <h1 class="font-bold">Time</h1>
+            <h1 class="font-bold">Program</h1>
+
+            <input class="rounded w-full p-2 bg-light border-white outline-sky-600 outline-2 focus:outline focus:bg-dark" type="text" placeholder="00:00">
+            <input class="rounded w-full p-2 bg-light border-white outline-sky-600 outline-2 focus:outline focus:bg-dark" type="text" placeholder="Ohjelmaa">
+            
+            <input class="rounded w-full p-2 bg-light border-white outline-sky-600 outline-2 focus:outline focus:bg-dark" type="text" placeholder="00:00">
+            <input class="rounded w-full p-2 bg-light border-white outline-sky-600 outline-2 focus:outline focus:bg-dark" type="text" placeholder="Ohjelmaa">
+
+            <input class="rounded w-full p-2 bg-light border-white outline-sky-600 outline-2 focus:outline focus:bg-dark" type="text" placeholder="00:00">
+            <input class="rounded w-full p-2 bg-light border-white outline-sky-600 outline-2 focus:outline focus:bg-dark" type="text" placeholder="Ohjelmaa">
+
+            <input class="rounded w-full p-2 bg-light border-white outline-sky-600 outline-2 focus:outline focus:bg-dark" type="text" placeholder="00:00">
+            <input class="rounded w-full p-2 bg-light border-white outline-sky-600 outline-2 focus:outline focus:bg-dark" type="text" placeholder="Ohjelmaa">
+
+            <input class="rounded w-full p-2 bg-light border-white outline-sky-600 outline-2 focus:outline focus:bg-dark" type="text" placeholder="00:00">
+            <input class="rounded w-full p-2 bg-light border-white outline-sky-600 outline-2 focus:outline focus:bg-dark" type="text" placeholder="Ohjelmaa">
+
+            <input class="rounded w-full p-2 bg-light border-white outline-sky-600 outline-2 focus:outline focus:bg-dark" type="text" placeholder="00:00">
+            <input class="rounded w-full p-2 bg-light border-white outline-sky-600 outline-2 focus:outline focus:bg-dark" type="text" placeholder="Ohjelmaa">
+
         </div>
-        <button class="block bg-sky-600 p-2 rounded hover:bg-sky-400">
-            Submit
+        <button id="updateButton" class="block bg-sky-600 p-2 rounded hover:bg-sky-400">
+            Update
           </button>
     </div>
 
-    <script src="schedule.ts"></script>
+    <script type="module" src="schedule.ts"></script>
 </body>
 </html>
