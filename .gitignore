@@ -1,0 +1,7 @@
+node_modules
+.nodecg
+.parcel-cache
+
+# Output
+dashboard
+graphics

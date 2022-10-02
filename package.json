@@ -1,0 +1,48 @@
+{
+  "name": "wae-graphics",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "include-nodecg postinstall",
+    "dev": "include-nodecg start",
+    "build:graphics": "parcel build src/graphics/*.html --dist-dir graphics --public-url ./",
+    "build:dashboard": "parcel build src/dashboard/*.html --dist-dir dashboard --public-url ./",
+    "watch:dashboard": "parcel watch src/dashboard/*.html --dist-dir dashboard --public-url ./",
+    "build": "concurrently 'pnpm:build:*'"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "include-nodecg": "^0.0.3",
+    "nodecg": "^1.9.0"
+  },
+  "devDependencies": {
+    "concurrently": "^7.4.0",
+    "parcel": "^2.7.0",
+    "postcss": "^8.4.17",
+    "tailwindcss": "^3.1.8"
+  },
+  "browserslist": "chrome 103",
+  "nodecg": {
+    "compatibleRange": ">=0.9",
+    "dashboardPanels": [
+      {
+        "name": "toasts",
+        "title": "Toasts",
+        "width": 4,
+        "file": "toasts.html"
+      },
+      {
+        "name": "schedule",
+        "title": "Schedule",
+        "width": 4,
+        "file": "schedule.html"
+      },
+      {
+        "name": "clock",
+        "title": "Clock",
+        "width": 2,
+        "file": "clock.html"
+      }
+    ]
+  }
+}
