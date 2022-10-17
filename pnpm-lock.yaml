@@ -1,16 +1,20 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@preact/signals': ^1.1.2
   concurrently: ^7.4.0
   include-nodecg: ^0.0.3
   nodecg: ^1.9.0
   parcel: ^2.7.0
   postcss: ^8.4.17
+  preact: ^10.11.0
   tailwindcss: ^3.1.8
 
 dependencies:
+  '@preact/signals': 1.1.2_preact@10.11.0
   include-nodecg: 0.0.3
   nodecg: 1.9.0
+  preact: 10.11.0
 
 devDependencies:
   concurrently: 7.4.0
@@ -1482,6 +1486,19 @@ packages:
       '@webcomponents/shadycss': 1.11.0
     dev: false
 
+  /@preact/signals-core/1.2.2:
+    resolution: {integrity: sha512-z3/bCj7rRA21RJb4FeJ4guCrD1CQbaURHkCTunUWQpxUMAFOPXCD8tSFqERyGrrcSb4T3Hrmdc1OAl0LXBHwiw==}
+    dev: false
+
+  /@preact/signals/1.1.2_preact@10.11.0:
+    resolution: {integrity: sha512-MLNNrICSllHBhpXBvXbl7K5L1HmIjuTzgBw+zdODqjM/cLGPXdYiAWt4lqXlrxNavYdoU4eljb+TLE+DRL+6yw==}
+    peerDependencies:
+      preact: 10.x
+    dependencies:
+      '@preact/signals-core': 1.2.2
+      preact: 10.11.0
+    dev: false
+
   /@socket.io/component-emitter/3.1.0:
     resolution: {integrity: sha512-+9jVqKhRSpsc591z5vX+X5Yyw+he/HCB4iQ/RYxw35CEPaY1gnsNE43nf9n9AaYjAQrTiI/mOwKUKdUs9vf7Xg==}
     dev: false
@@ -2396,7 +2413,7 @@ packages:
     dev: false
 
   /concat-map/0.0.1:
-    resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
+    resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=}
     dev: false
 
   /concat-stream/1.6.2:
@@ -2872,7 +2889,7 @@ packages:
     dev: false
 
   /ee-first/1.1.1:
-    resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
+    resolution: {integrity: sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=}
     dev: false
 
   /electron-to-chromium/1.4.270:
@@ -5301,6 +5318,10 @@ packages:
       posthtml-parser: 0.11.0
       posthtml-render: 3.0.0
     dev: true
+
+  /preact/10.11.0:
+    resolution: {integrity: sha512-Fk6+vB2kb6mSJfDgODq0YDhMfl0HNtK5+Uc9QqECO4nlyPAQwCI+BKyWO//idA7ikV7o+0Fm6LQmNuQi1wXI1w==}
+    dev: false
 
   /preserve/0.2.0:
     resolution: {integrity: sha512-s/46sYeylUfHNjI+sA/78FAHlmIuKqI9wNnzEOGehAlUUYeObv5C2mOinXBjyUyWmJ2SfcS2/ydApH4hTF4WXQ==}

@@ -3,8 +3,7 @@
 @tailwind utilities;
 
 body {
-    @apply bg-mid;
-    @apply text-white;
+    @apply bg-mid text-white p-4;
 }
 
 .grid-cols-schedule {
