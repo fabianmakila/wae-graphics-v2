@@ -37,7 +37,7 @@ function collapse() {
   text.style.width = "0px";
 }
 
-setInterval(nextText, 15000);
+setInterval(nextText, 60000);
 
 
 // URL params
