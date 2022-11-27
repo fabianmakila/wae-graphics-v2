@@ -1,6 +1,6 @@
 // HTML Elements
 const text = document.getElementById("text")!;
-const textWrapper = document.getElementById("textWrapper")!;
+//const textWrapper = document.getElementById("textWrapper")!;
 
 const texts = [
   "WAEverything",
@@ -9,14 +9,16 @@ const texts = [
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
-let index = 1;
+let index = 0;
 
 async function nextText() {
-  textWrapper.style.opacity = "0";
+  expand();
+  await sleep(10000);
+  collapse();
+}
 
-  await sleep(1000);
-
-  const oldWidth = text.scrollWidth;
+async function expand() {
+  // Update text
   text.textContent = texts[index];
   if (index >= texts.length - 1) {
     index = 0;
@@ -24,27 +26,18 @@ async function nextText() {
     index = index + 1;
   }
 
-  let transition = text.style.transition;
-  text.style.transition = "";
-  text.style.width = null;
-
-  requestAnimationFrame(function() {
-    let newWidth = text.scrollWidth;
-    text.style.width = oldWidth + 'px';
-    text.style.transition = transition;
-
-
-    requestAnimationFrame(function() {
-      text.style.width = newWidth + "px";
-    });
-  });
-
-  await sleep(2000);
-
-  textWrapper.style.opacity = "1";
+  // Apply new width
+  const contentWidth = text.scrollWidth;
+  text.style.width = `calc(${contentWidth + "px"} + 1rem)`;
+  text.style.opacity = "1";
 }
 
-setInterval(nextText, 30000);
+function collapse() {
+  text.style.opacity = "0";
+  text.style.width = "0px";
+}
+
+setInterval(nextText, 15000);
 
 
 // URL params
