@@ -1,6 +1,6 @@
 // HTML Elements
 const text = document.getElementById("text")!;
-//const textWrapper = document.getElementById("textWrapper")!;
+const textWrapper = document.getElementById("textWrapper")!;
 
 const texts = [
   "WAEverything",
@@ -28,13 +28,15 @@ async function expand() {
 
   // Apply new width
   const contentWidth = text.scrollWidth;
-  text.style.width = `calc(${contentWidth + "px"} + 1rem)`;
+  text.style.width = contentWidth + "px";
+  textWrapper.style.paddingInline = "1rem";
   text.style.opacity = "1";
 }
 
 function collapse() {
   text.style.opacity = "0";
   text.style.width = "0px";
+  textWrapper.style.paddingInline = "0rem";
 }
 
 setInterval(nextText, 60000);
