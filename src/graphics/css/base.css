@@ -1,9 +1,29 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'npm:destyle.css';
+
+:root {
+    --clr-white: #ffffff;
+    --clr-primary: #04c2ff;
+    --clr-gray-700: #374151;
+    --clr-gray-800: #1f2937;
+    --clr-gray-900: #111827;
+
+    --horizontal-safezone: 3.5vw;
+    --vertical-safezone: 3.5vh;
+}
 
 body {
-    @apply bg-gray-900;
-    @apply text-white;
-    @apply h-screen;
+    padding-inline: var(--horizontal-safezone);
+    padding-block: var(--vertical-safezone);
+    height: 100vh;
+    font-family: 'Alata', sans-serif;
+    color: var(--clr-white);
+    overflow: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 5rem;
 }

@@ -1,0 +1,15 @@
+extends layout/default.pug
+
+block styles
+  link(rel="stylesheet", href="./css/intermission.css")
+
+block meta
+  title Intermission
+
+block content
+  div(id="particles1", class="particles")
+  div(id="particles2", class="particles")
+  div(id="particles3", class="particles")
+
+block scripts
+  script(type="module", src="./js/intermission.ts")

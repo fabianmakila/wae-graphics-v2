@@ -1,39 +1,50 @@
 import { NodeCGBrowser } from "nodecg/types/browser";
 
 const toastReplicant = nodecg.Replicant("toasts");
-const form = <HTMLFormElement>document.getElementById("form");
-const manualInput = <HTMLFormElement>document.getElementById("isManual");
+const inputs = document.querySelectorAll("input");
 
-document.querySelectorAll("input").forEach((input) => {
-  input.addEventListener("input", updateToastReplicant);
-});
-
-document.querySelectorAll('button').forEach(button => {
-    button.addEventListener("click", function (e) {
-        nodecg.sendMessage("showToast", e.target.dataset.show)
-    })
-})
-
-function updateToastReplicant() {
-  const data = Object.fromEntries(new FormData(form).entries());
-  toastReplicant.value = data;
+interface SideToastData {
+  icon?: string,
+  title: string,
+  subtitle: string
 }
 
-toastReplicant.on('change', (newValue) => {
-    if (newValue === undefined) {
-        return;
-    }
-    for (const [key, value] of Object.entries(newValue)) {
-        if (key === "isManual") continue;
-        const input = <HTMLInputElement>document.getElementById(key);
-        if (input === null) {
-            continue;
-        }
-        input.value = value;
+interface ToastReplicant {
+  left: SideToastData
+  right: SideToastData
+  bottom: string
+  show: string
+}
+
+let data: ToastReplicant;
+
+document.querySelectorAll('button').forEach(button => {
+  button.addEventListener("click", function (e:any) {
+    data = {
+      left: {
+        icon: undefined,
+        title: inputs[0].value,
+        subtitle: inputs[1].value
+      },
+      right: {
+        icon: undefined,
+        title: inputs[2].value,
+        subtitle: inputs[3].value
+      },
+      bottom: inputs[4].value,
+      show: e.target.dataset.show
     }
 
-    // Update isManual checkbox
-    if (manualInput !== null) {
-        manualInput.checked = (newValue.isManual);
-    }
+    toastReplicant.value = data;
+  })
+})
+
+toastReplicant.on('change', (newValue:any) => {
+  inputs[0].value = newValue.left.title;
+  inputs[1].value = newValue.left.subtitle;
+
+  inputs[2].value = newValue.right.title;
+  inputs[3].value = newValue.right.subtitle;
+
+  inputs[4].value = newValue.bottom;
 });

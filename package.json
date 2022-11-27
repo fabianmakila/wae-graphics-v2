@@ -1,23 +1,28 @@
 {
-  "name": "wae-graphics",
+  "name": "nodecg-wae-bundle",
   "version": "1.0.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "include-nodecg postinstall",
     "dev": "include-nodecg start",
-    "build:graphics": "parcel build src/graphics/*.html --dist-dir graphics --public-url ./",
-    "watch:graphics": "parcel watch src/graphics/*.html --dist-dir graphics --public-url ./",
-    "build:dashboard": "parcel build src/dashboard/*.html --dist-dir dashboard --public-url ./",
-    "watch:dashboard": "parcel watch src/dashboard/*.html --dist-dir dashboard --public-url ./",
+    "build:graphics": "parcel build src/graphics/*.pug --dist-dir graphics --public-url ./",
+    "watch:graphics": "parcel watch src/graphics/*.pug --dist-dir graphics --public-url ./",
+    "build:dashboard": "parcel build src/dashboard/*.pug --dist-dir dashboard --public-url ./",
+    "watch:dashboard": "parcel watch src/dashboard/*.pug --dist-dir dashboard --public-url ./",
     "build": "concurrently 'pnpm:build:*'",
     "watch": "concurrently 'pnpm:watch:*'"
   },
   "license": "ISC",
   "dependencies": {
+    "destyle.css": "^3.0.2",
     "include-nodecg": "^0.0.3",
-    "nodecg": "^1.9.0"
+    "nodecg": "^1.9.0",
+    "tsparticles": "^2.5.3",
+    "tsparticles-engine": "^2.5.2",
+    "tsparticles-plugin-emitters": "^2.5.3"
   },
   "devDependencies": {
+    "@parcel/transformer-pug": "^2.7.0",
     "concurrently": "^7.4.0",
     "parcel": "^2.7.0",
     "postcss": "^8.4.17",
@@ -49,6 +54,16 @@
     "graphics": [
       {
         "file": "schedule.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "file": "toasts.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "file": "intermission.html",
         "width": 1920,
         "height": 1080
       }

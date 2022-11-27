@@ -1,0 +1,23 @@
+extends layout/default.pug
+
+block styles
+  link(rel="stylesheet", href="./css/toasts.css")
+
+block meta
+  title Toasts
+
+block content
+  div(class="toast left" id="left")
+    div(class="icon")
+    div(class="title") FabianAdrian
+    div(class="subtitle") Juuh elikkäs tää on
+
+  div(class="toast right" id="right")
+    div(class="icon")
+    div(class="title") J3-RMU
+    div(class="subtitle") Ehkä? Ketä?
+
+  div(class="toast bottom" id="bottom")
+
+block scripts
+  script(type="module", src="./js/toasts.ts")

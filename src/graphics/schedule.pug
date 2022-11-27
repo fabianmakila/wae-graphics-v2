@@ -1,0 +1,24 @@
+extends layout/default.pug
+
+block styles
+  link(rel="stylesheet", href="./css/schedule.css")
+
+block meta
+  title Schedule
+
+block content
+  div(class="left")
+    img(class="logo", src="assets/wae-logo+wordmark.svg", alt="")
+    div(id="clock")
+  div(class="right")
+    h1 Aikataulu
+    table
+      - var n = 0;
+      while n < 6
+        - n++;
+        tr
+          td
+          td
+
+block scripts
+  script(type="module", src="./js/schedule.ts")

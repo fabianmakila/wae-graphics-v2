@@ -1,4 +1,4 @@
-const clockDisplay = document.getElementById("clockDisplay");
+const clockDisplay = document.getElementById("clock");
 
 function showTime(){
     const date = new Date();
@@ -6,7 +6,7 @@ function showTime(){
     if (clockDisplay === null) {
         return;
     }
-    
+
     clockDisplay.textContent = date.toLocaleTimeString('sw-SE');
     setTimeout(showTime, 1000);
 }

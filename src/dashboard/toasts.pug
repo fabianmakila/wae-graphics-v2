@@ -1,0 +1,52 @@
+extends layout/default.pug
+
+block meta
+  title Toasts
+
+block content
+  div(class="flex flex-col gap-4")
+    div(class="flex gap-4")
+      div(class="flex flex-col gap-2 w-full")
+        h1(class="font-bold") Left
+        input(
+          class="rounded w-full p-2 bg-light border-white outline-sky-600 outline-2 focus:outline focus:bg-dark"
+          type="text"
+          placeholder="Title"
+        )
+        input(
+          class="rounded w-full p-2 bg-light border-white outline-sky-600 outline-2 focus:outline focus:bg-dark"
+          type="text"
+          placeholder="Subtitle"
+        )
+
+      div(class="flex flex-col gap-2 w-full")
+        h1(class="font-bold") Right
+        input(
+          class="rounded w-full p-2 bg-light border-white outline-sky-600 outline-2 focus:outline focus:bg-dark"
+          type="text"
+          placeholder="Title"
+        )
+        input(
+          class="rounded w-full p-2 bg-light border-white outline-sky-600 outline-2 focus:outline focus:bg-dark"
+          type="text"
+          placeholder="Subtitle"
+        )
+
+    div(class="flex gap-1")
+      button(data-show="left" class="bg-sky-600 p-2 rounded-l basis-full hover:bg-sky-400") Show left
+      button(data-show="both" class="bg-sky-600 p-2 basis-full hover:bg-sky-400") Show both
+      button(data-show="right" class="bg-sky-600 p-2 rounded-r basis-full hover:bg-sky-400") Show right
+
+    div(class="flex flex-col gap-2")
+      h1(class="font-bold") Bottom
+      input(
+        class="rounded w-full p-2 bg-light border-white outline-sky-600 outline-2 focus:outline focus:bg-dark"
+        type="text"
+        placeholder="Bottom panel text"
+        id="bottomToastContent"
+        name="bottomToastContent"
+      )
+      button(data-show="bottom" class="block bg-sky-600 p-2 rounded hover:bg-sky-400") Show bottom
+
+block scripts
+  script(src="./js/toasts.ts" type="module")

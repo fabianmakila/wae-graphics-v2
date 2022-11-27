@@ -1,0 +1,10 @@
+extends layout/clock.pug
+
+block meta
+  title Clock
+
+block content
+  div(id="clock" class="p-4 grid place-items-center h-full font-bold text-6xl")
+
+block scripts
+  script(src="./js/clock.ts" type="module")
