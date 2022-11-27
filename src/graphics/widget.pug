@@ -1,0 +1,16 @@
+extends layout/default.pug
+
+block styles
+  link(rel="stylesheet", href="./css/widget.css")
+
+block meta
+  title Widget
+
+block content
+  div(class="widget")
+    img(src="./assets/wae-logo.svg", alt="")
+    div(id="textWrapper")
+      div(id="text") WAEverything
+
+block scripts
+  script(type="module", src="./js/widget.ts")

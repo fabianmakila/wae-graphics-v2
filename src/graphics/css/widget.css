@@ -1,0 +1,41 @@
+.widget {
+  background: var(--clr-gray-900);
+  height: 4rem;
+  display: flex;
+  position: absolute;
+  right: var(--vertical-safezone);
+  place-items: center;
+  box-shadow: var(--shadow);
+  border-bottom: var(--border);
+}
+
+img {
+  height: 100%;
+  display: block;
+  padding: 1rem;
+  background: var(--clr-gray-800);
+}
+
+#textWrapper {
+  padding-inline: 1rem;
+  transition: opacity 1s;
+}
+
+#text {
+  transition: width 2s;
+  display: flex;
+  font-size: 1.5rem;
+}
+
+.live {
+  position: absolute;
+  right: -.75rem;
+  top: -.75rem;
+  background: var(--clr-red-500);
+  padding: .25em .5em;
+  box-shadow: var(--shadow);
+}
+
+span {
+  color: var(--clr-primary);
+}

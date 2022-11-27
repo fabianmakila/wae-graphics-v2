@@ -1,8 +1,8 @@
 .toast {
   background: var(--clr-gray-900);
   position: absolute;
-  border-bottom: .25rem solid var(--clr-primary);
-  box-shadow: 0 0 1rem rgba(0,0,0,.25);
+  border-bottom: var(--border);
+  box-shadow: var(--shadow);
   transition: transform 1s;
 }
 
