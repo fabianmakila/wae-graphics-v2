@@ -1,9 +1,11 @@
+body {
+  display: flex;
+}
+
 .widget {
   background: var(--clr-gray-900);
   height: 4rem;
-  display: flex;
-  position: absolute;
-  right: var(--vertical-safezone);
+  display: inline-flex;
   place-items: center;
   box-shadow: var(--shadow);
   border-bottom: var(--border);
