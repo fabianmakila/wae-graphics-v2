@@ -1,5 +1,5 @@
 .toast {
-  background: var(--clr-gray-900);
+  background: var(--clr-gray-800);
   position: absolute;
   border-bottom: var(--border);
   box-shadow: var(--shadow);
