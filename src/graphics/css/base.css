@@ -3,9 +3,9 @@
 :root {
     --clr-white: #ffffff;
     --clr-primary: #04c2ff;
-    --clr-gray-700: #374151;
-    --clr-gray-800: #1f2937;
-    --clr-gray-900: #111827;
+    --clr-gray-700: #333333;
+    --clr-gray-800: #222222;
+    --clr-gray-900: #111111;
     --clr-red-500: #ef4444;
 
     --horizontal-safezone: 3.5vw;

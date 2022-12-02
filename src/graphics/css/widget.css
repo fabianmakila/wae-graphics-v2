@@ -3,7 +3,7 @@ body {
 }
 
 .widget {
-  background: var(--clr-gray-900);
+  background: var(--clr-gray-800);
   height: 4rem;
   display: inline-flex;
   place-items: center;
@@ -13,33 +13,8 @@ body {
   border-right: var(--border);
 }
 
-img {
-  height: 100%;
+.text {
   padding: 1rem;
-}
-
-#textWrapper {
-  display: flex;
-  align-items: center;
-  background: var(--clr-gray-800);
-  height: 100%;
-}
-
-#text {
-  transition: opacity 2s, width 2s;
   font-size: 1.5rem;
-  opacity: 0;
-}
-
-.live {
-  position: absolute;
-  right: -.75rem;
-  top: -.75rem;
-  background: var(--clr-red-500);
-  padding: .25em .5em;
-  box-shadow: var(--shadow);
-}
-
-span {
-  color: var(--clr-primary);
+  transition: width 2s, opacity 2s;
 }
