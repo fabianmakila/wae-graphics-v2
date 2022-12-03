@@ -21,7 +21,7 @@ function getInputPairs() {
         if (index % 2 === 0) {
           result.push(array.slice(index, index + 2));
         }
-    
+
         return result;
       }, []);
     return pairs;

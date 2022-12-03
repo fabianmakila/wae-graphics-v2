@@ -1,3 +1,12 @@
+// NodeCG
+const widgetReplicant = nodecg.Replicant("widget");
+let texts: string[];
+widgetReplicant.on("change", (newValue) => {
+  texts = newValue as string[];
+  textIndex = 0;
+  init();
+});
+
 // HTML Elements
 const text = document.getElementById("text")!;
 
@@ -19,20 +28,20 @@ switch (urlParams.get("position")) {
     document.body.style.justifyContent = "right";
 }
 
-// Temporary texts shown on widget
-// Will be moved to panel where they can be user configured
-const texts = [
-  "WAEverything",
-  "discord.gg/wae"
-]
-
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 let textIndex = 0;
 
 function swapNextText() {
+  if (texts == undefined) {
+    text.textContent = "WAEverything";
+    return;
+  }
+
   // Swap text
   text.textContent = texts[textIndex];
+
+  // Update textIndex
   if (textIndex >= texts.length - 1) {
     textIndex = 0;
   } else {
@@ -41,6 +50,10 @@ function swapNextText() {
 }
 
 async function nonCollapseRoutine() {
+  if (texts == undefined) {
+    return;
+  }
+
   // Hide text
   text.style.opacity = "0";
 
@@ -75,10 +88,14 @@ async function nonCollapseRoutine() {
 
 const interval = 60000;
 
+let initialized: boolean;
 function init() {
+  if (initialized) {
+    return;
+  }
   //text.style.width = "0px";
   swapNextText();
+  setInterval(nonCollapseRoutine, interval);
+  initialized = true;
 }
 
-init();
-setInterval(nonCollapseRoutine, interval);
