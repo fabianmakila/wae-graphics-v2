@@ -12,7 +12,6 @@
     "build": "concurrently 'pnpm:build:*'",
     "watch": "concurrently 'pnpm:watch:*'"
   },
-  "license": "ISC",
   "dependencies": {
     "destyle.css": "^3.0.2",
     "include-nodecg": "^0.0.3",
