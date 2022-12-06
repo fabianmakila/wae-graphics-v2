@@ -1,10 +1,13 @@
-import { NodeCGBrowser } from "nodecg/types/browser";
+import { NodeCGBrowser, ReplicantBrowser } from "nodecg/types/browser";
+import { ScheduleReplicant } from "../../types/schemas";
 
-const scheduleReplicant = nodecg.Replicant("schedule");
-const button = document.getElementById("updateButton");
+// NodeCG
+const scheduleReplicant: ReplicantBrowser<ScheduleReplicant> = nodecg.Replicant("schedule");
+
+const button = document.getElementById("updateButton")!;
 const inputPairs = getInputPairs();
 
-button?.addEventListener("click", updateSchedule);
+button.addEventListener("click", updateSchedule);
 
 function updateSchedule() {
     const scheduleEntries = [];
@@ -17,7 +20,7 @@ function updateSchedule() {
 
 function getInputPairs() {
     const inputs = [...document.querySelectorAll("input")];
-    const pairs = inputs.reduce(function (result, value, index, array) {
+    const pairs: string[] = inputs.reduce(function (result, _value, index, array) {
         if (index % 2 === 0) {
           result.push(array.slice(index, index + 2));
         }

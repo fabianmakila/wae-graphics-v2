@@ -1,33 +1,33 @@
-import { NodeCGBrowser } from "nodecg/types/browser";
+import { NodeCGBrowser, ReplicantBrowser } from "nodecg/types/browser";
+import { ToastsReplicant } from "../../types/schemas";
 
-const toastReplicant = nodecg.Replicant("toasts");
+const toastsReplicant: ReplicantBrowser<ToastsReplicant> = nodecg.Replicant("toasts");
 
-const bottomToast = document.getElementById("bottom");
-const leftToast = document.getElementById("left");
-const rightToast = document.getElementById("right");
+const bottomToast = document.getElementById("bottom")!;
+const leftToast = document.getElementById("left")!;
+const rightToast = document.getElementById("right")!;
 
-const leftToastDivs = leftToast?.getElementsByTagName("div");
-const rightToastDivs = rightToast?.getElementsByTagName("div");
+const leftToastDivs = leftToast.getElementsByTagName("div");
+const rightToastDivs = rightToast.getElementsByTagName("div");
 
-function updateToastContent(data:any) {
-  if (data === undefined) return;
-  leftToastDivs[1].textContent = data.left.title;
-  leftToastDivs[2].textContent = data.left.subtitle;
+toastsReplicant.on("change", (newValue) => {
+  leftToastDivs[1].textContent = newValue.leftToast.title || "";
+  leftToastDivs[2].textContent = newValue.leftToast.subtitle || "";
 
-  rightToastDivs[1].textContent = data.right.title;
-  rightToastDivs[2].textContent = data.right.subtitle;
+  rightToastDivs[1].textContent = newValue.rightToast.title || "";
+  rightToastDivs[2].textContent = newValue.rightToast.subtitle || "";
 
   if (bottomToast !== null) {
     bottomToast.innerHTML = "";
   }
 
-  data.bottom.split(";").forEach(entry => {
+  newValue.bottomToast.forEach(entry => {
     let div = document.createElement("div");
     div.textContent = entry;
     bottomToast?.appendChild(div);
   })
 
-  switch (data.show) {
+  switch (newValue.show) {
     case "left":
       showToast(leftToast);
       break;
@@ -42,10 +42,6 @@ function updateToastContent(data:any) {
         showToast(bottomToast);
         break;
   }
-}
-
-toastReplicant.on("change", (newValue) => {
-  updateToastContent(newValue);
 });
 
 function showToast(toast: HTMLElement | null) {

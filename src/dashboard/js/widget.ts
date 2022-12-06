@@ -1,13 +1,19 @@
-const scheduleReplicant = nodecg.Replicant("widget");
+import { WidgetReplicant } from "../../types/schemas";
+import { NodeCGBrowser, ReplicantBrowser } from "nodecg/types/browser";
+
+// NodeCG
+const widgetReplicant: ReplicantBrowser<WidgetReplicant> =
+  nodecg.Replicant("widget");
+
 const textArea = document.getElementById("texts")! as HTMLTextAreaElement;
 const updateButton = document.getElementById("updateButton")!;
 
-updateButton?.addEventListener("click", () => {
+updateButton.addEventListener("click", () => {
   const texts = textArea.value.split("\n");
-  scheduleReplicant.value = texts;
+  widgetReplicant.value = texts;
 });
 
-scheduleReplicant.on("change", (newValue) => {
+widgetReplicant.on("change", (newValue) => {
   if (newValue == undefined) {
     return;
   }

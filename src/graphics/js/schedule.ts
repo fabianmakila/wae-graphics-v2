@@ -1,6 +1,7 @@
-import { NodeCGBrowser } from "nodecg/types/browser";
+import { NodeCGBrowser, ReplicantBrowser } from "nodecg/types/browser";
+import { ScheduleReplicant } from "../../types/schemas";
 
-const scheduleReplicant = nodecg.Replicant("schedule");
+const scheduleReplicant: ReplicantBrowser<ScheduleReplicant> = nodecg.Replicant("schedule");
 const tableCells = document.querySelectorAll("td");
 
 scheduleReplicant.on('change', (newValue: any) => {
@@ -21,7 +22,7 @@ function showTime(){
     if (clockDisplay === null) {
         return;
     }
-    
+
     clockDisplay.textContent = date.toLocaleTimeString('sw-SE');
     setTimeout(showTime, 1000);
 }
