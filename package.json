@@ -33,6 +33,12 @@
   "browserslist": "chrome 103",
   "nodecg": {
     "compatibleRange": ">=1.9.0",
+    "assetCategories": [
+      {
+        "name": "intermission-logos",
+        "title": "Intermission Images"
+      }
+    ],
     "dashboardPanels": [
       {
         "name": "toasts",
