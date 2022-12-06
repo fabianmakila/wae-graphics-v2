@@ -32,7 +32,7 @@
   },
   "browserslist": "chrome 103",
   "nodecg": {
-    "compatibleRange": ">=0.9",
+    "compatibleRange": ">=1.9.0",
     "dashboardPanels": [
       {
         "name": "toasts",
