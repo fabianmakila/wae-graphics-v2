@@ -30,7 +30,7 @@ function getInputPairs() {
     return pairs;
 }
 
-scheduleReplicant.on('change', (newValue: ScheduleReplicant) => {
+scheduleReplicant.on('change', (newValue) => {
   // The value is null on new NodeCG instances
   if (newValue == undefined) {
     return;

@@ -5,6 +5,10 @@ import { WidgetReplicant } from "../../types/schemas";
 const widgetReplicant: ReplicantBrowser<WidgetReplicant> = nodecg.Replicant("widget");
 let texts: string[];
 widgetReplicant.on("change", (newValue) => {
+  if (newValue == undefined) {
+    return;
+  }
+
   texts = newValue as string[];
   textIndex = 0;
   init();

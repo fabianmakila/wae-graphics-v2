@@ -11,6 +11,10 @@ const leftToastDivs = leftToast.getElementsByTagName("div");
 const rightToastDivs = rightToast.getElementsByTagName("div");
 
 toastsReplicant.on("change", (newValue) => {
+  if (newValue == undefined) {
+    return;
+  }
+
   leftToastDivs[1].textContent = newValue.leftToast.title || "";
   leftToastDivs[2].textContent = newValue.leftToast.subtitle || "";
 

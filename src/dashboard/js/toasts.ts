@@ -26,7 +26,7 @@ document.querySelectorAll("button").forEach((button) => {
   });
 });
 
-toastsReplicant.on("change", (newValue: ToastsReplicant) => {
+toastsReplicant.on("change", (newValue) => {
   // The value is null on new NodeCG instances
   if (newValue == undefined) {
     return;

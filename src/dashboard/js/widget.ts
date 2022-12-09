@@ -13,7 +13,7 @@ updateButton.addEventListener("click", () => {
   widgetReplicant.value = texts;
 });
 
-widgetReplicant.on("change", (newValue: WidgetReplicant) => {
+widgetReplicant.on("change", (newValue) => {
   if (newValue == undefined) {
     return;
   }

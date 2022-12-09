@@ -1,30 +1,35 @@
 import { NodeCGBrowser, ReplicantBrowser } from "nodecg/types/browser";
 import { ScheduleReplicant } from "../../types/schemas";
 
-const scheduleReplicant: ReplicantBrowser<ScheduleReplicant> = nodecg.Replicant("schedule");
+const scheduleReplicant: ReplicantBrowser<ScheduleReplicant> =
+  nodecg.Replicant("schedule");
 const tableCells = document.querySelectorAll("td");
 
-scheduleReplicant.on('change', (newValue: any) => {
-    for (let index = 0; index < newValue.length; index++) {
-        const pair = newValue[index];
+scheduleReplicant.on("change", (newValue) => {
+  if (newValue == undefined) {
+    return;
+  }
 
-        tableCells[index * 2].textContent = pair[0];
-        tableCells[index * 2 + 1].textContent = pair[1];
-    }
+  for (let index = 0; index < newValue.length; index++) {
+    const pair = newValue[index];
+
+    tableCells[index * 2].textContent = pair[0];
+    tableCells[index * 2 + 1].textContent = pair[1];
+  }
 });
 
 // Clock
 const clockDisplay = document.getElementById("clock");
 
-function showTime(){
-    const date = new Date();
+function showTime() {
+  const date = new Date();
 
-    if (clockDisplay === null) {
-        return;
-    }
+  if (clockDisplay === null) {
+    return;
+  }
 
-    clockDisplay.textContent = date.toLocaleTimeString('sw-SE');
-    setTimeout(showTime, 1000);
+  clockDisplay.textContent = date.toLocaleTimeString("sw-SE");
+  setTimeout(showTime, 1000);
 }
 
 showTime();
