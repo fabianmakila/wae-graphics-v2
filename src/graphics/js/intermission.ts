@@ -1,21 +1,30 @@
 import { tsParticles } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
+import { NodeCGBrowser, ReplicantBrowser } from "nodecg/types/browser";
+
+const logoReplicant = nodecg.Replicant("assets:intermission-logo");
+const logoImageElement: HTMLImageElement = document.getElementById("logo") as HTMLImageElement;
 
 // Images
-const logoSvg = new URL("../assets/wae-logo+wordmark.svg", import.meta.url);
+const defaultLogo = new URL("../assets/wae-logo+wordmark.svg", import.meta.url);
 const barSvg = new URL("../assets/bar-6-units-default.svg", import.meta.url);
 
 // URL params
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 
-if (!urlParams.has("nologo")) {
-  const logo = document.createElement("img");
-  logo.alt = "";
-  logo.src = logoSvg.href;
-  logo.classList.add("logo");
-  document.body.append(logo);
-}
+logoReplicant.on("change", (newValue: any) => {
+  if (urlParams.has("nologo")) {
+    return;
+  }
+
+  if (newValue[0] == undefined) {
+    logoImageElement.src = defaultLogo.href;
+    return;
+  }
+
+  logoImageElement.src = newValue[0].url;
+})
 
 // Particles
 

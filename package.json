@@ -35,8 +35,8 @@
     "compatibleRange": ">=1.9.0",
     "assetCategories": [
       {
-        "name": "intermission-logos",
-        "title": "Intermission Images",
+        "name": "intermission-logo",
+        "title": "Intermission Logo",
         "allowedTypes": ["png", "jpg", "jpeg", "svg", "webp"]
       }
     ],
