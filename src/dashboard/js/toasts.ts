@@ -27,17 +27,22 @@ document.querySelectorAll("button").forEach((button) => {
 });
 
 toastsReplicant.on("change", (newValue: ToastsReplicant) => {
+
   // Left
-  inputs[0].value = newValue.leftToast.title || "";
-  inputs[1].value = newValue.leftToast.subtitle || "";
+  if (newValue.leftToast != undefined) {
+    inputs[0].value = newValue.leftToast.title || "";
+    inputs[1].value = newValue.leftToast.subtitle || "";
+  }
 
   // Right
-  inputs[2].value = newValue.rightToast.title || "";
-  inputs[3].value = newValue.rightToast.subtitle || "";
+  if (newValue.rightToast != undefined) {
+    inputs[2].value = newValue.rightToast.title || "";
+    inputs[3].value = newValue.rightToast.subtitle || "";
+  }
 
   // Bottom
   const bottomToastItems = newValue.bottomToast;
-  if (bottomToastItems != null) {
+  if (bottomToastItems != undefined) {
     inputs[4].value = bottomToastItems.join(";");
   }
 });
