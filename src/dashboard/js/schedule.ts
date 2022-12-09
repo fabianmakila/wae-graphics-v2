@@ -30,11 +30,16 @@ function getInputPairs() {
     return pairs;
 }
 
-scheduleReplicant.on('change', (newValue: any) => {
-    for (let index = 0; index < newValue.length; index++) {
-        const inputPair = inputPairs[index];
-        const entry = newValue[index];
-        inputPair[0].value = entry[0];
-        inputPair[1].value = entry[1];
-    }
+scheduleReplicant.on('change', (newValue: ScheduleReplicant) => {
+  // The value is null on new NodeCG instances
+  if (newValue == undefined) {
+    return;
+  }
+
+  for (let index = 0; index < newValue.length; index++) {
+      const inputPair = inputPairs[index];
+      const entry = newValue[index];
+      inputPair[0].value = entry[0];
+      inputPair[1].value = entry[1];
+  }
 });
