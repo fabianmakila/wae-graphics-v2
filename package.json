@@ -36,7 +36,8 @@
     "assetCategories": [
       {
         "name": "intermission-logos",
-        "title": "Intermission Images"
+        "title": "Intermission Images",
+        "allowedTypes": ["png", "jpg", "jpeg", "svg", "webp"]
       }
     ],
     "dashboardPanels": [
