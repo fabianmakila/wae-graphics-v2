@@ -3,8 +3,7 @@ node_modules
 .parcel-cache
 
 # Output
-/dashboard
-/graphics
+wae-stream-bundle
 
 # MacOS
 .DS_Store
