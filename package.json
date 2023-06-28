@@ -1,25 +1,23 @@
 {
   "name": "wae-stream-bundle",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "private": true,
   "scripts": {
     "build": "parcel build",
     "watch": "parcel watch",
     "schema-types": "nodecg schema-types"
   },
-  "dependencies": {
-    "destyle.css": "^4.0.0",
-    "nodecg": "^1.9.0",
-    "nodecg-cli": "^8.3.0",
-    "two.js": "^0.8.10"
-  },
   "devDependencies": {
-    "@parcel/config-default": "^2.8.2",
-    "@parcel/transformer-pug": "^2.8.2",
-    "parcel": "^2.8.2",
+    "@nodecg/types": "^2.1.11",
+    "@parcel/config-default": "^2.9.3",
+    "@parcel/transformer-pug": "^2.9.3",
+    "destyle.css": "^4.0.0",
+    "nodecg-cli": "^8.6.8",
+    "parcel": "^2.9.3",
     "parcel-reporter-multiple-static-file-copier": "^1.0.5",
-    "postcss": "^8.4.20",
-    "tailwindcss": "^3.2.4"
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.3.2",
+    "two.js": "^0.8.10"
   },
   "browserslist": "chrome 103",
   "targets": {

@@ -1,9 +1,8 @@
-import { NodeCGBrowser, ReplicantBrowser } from "nodecg/types/browser";
 import { ToastsReplicant } from "../../types/schemas";
 
 // NodeCG
-const toastsReplicant: ReplicantBrowser<ToastsReplicant> =
-  nodecg.Replicant("toasts");
+const toastsReplicant =
+  nodecg.Replicant<ToastsReplicant>("toasts");
 
 const inputs = document.querySelectorAll("input");
 

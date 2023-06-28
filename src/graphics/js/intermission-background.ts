@@ -10,7 +10,7 @@ const minOpacity = 0.25;
 // The width of the block svg
 const blockWidth = 142;
 
-const params = {
+const params: any = {
   width: "100vw",
   height: "100vh",
 };

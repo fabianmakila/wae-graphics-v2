@@ -1,0 +1,9 @@
+{
+    "include": ["src/**/*.ts", "src/**/*.tsx", "node_modules/@nodecg/types/augment-window.d.ts"],
+    "compilerOptions": {
+        "moduleResolution": "NodeNext",
+        "module": "ESNext",
+        "lib": ["ESNext", "DOM"],
+        "target": "ESNext"
+    }
+}

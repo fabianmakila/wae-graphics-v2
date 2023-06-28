@@ -1,9 +1,8 @@
 import { WidgetReplicant } from "../../types/schemas";
-import { NodeCGBrowser, ReplicantBrowser } from "nodecg/types/browser";
 
 // NodeCG
-const widgetReplicant: ReplicantBrowser<WidgetReplicant> =
-  nodecg.Replicant("widget");
+const widgetReplicant =
+  nodecg.Replicant<WidgetReplicant>("widget");
 
 const textArea = document.getElementById("texts")! as HTMLTextAreaElement;
 const updateButton = document.getElementById("updateButton")!;

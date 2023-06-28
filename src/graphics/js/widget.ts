@@ -1,8 +1,7 @@
-import { ReplicantBrowser } from "nodecg/types/browser";
 import { WidgetReplicant } from "../../types/schemas";
 
 // NodeCG
-const widgetReplicant: ReplicantBrowser<WidgetReplicant> = nodecg.Replicant("widget");
+const widgetReplicant = nodecg.Replicant<WidgetReplicant>("widget");
 let texts: string[];
 widgetReplicant.on("change", (newValue) => {
   if (newValue == undefined) {

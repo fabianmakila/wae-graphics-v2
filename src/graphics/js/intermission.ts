@@ -1,6 +1,5 @@
 import { tsParticles } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
-import { NodeCGBrowser, ReplicantBrowser } from "nodecg/types/browser";
 
 const logoReplicant = nodecg.Replicant("assets:intermission-logo");
 const logoImageElement: HTMLImageElement = document.getElementById("logo") as HTMLImageElement;

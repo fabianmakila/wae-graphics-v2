@@ -1,7 +1,6 @@
-import { NodeCGBrowser, ReplicantBrowser } from "nodecg/types/browser";
 import { ToastsReplicant } from "../../types/schemas";
 
-const toastsReplicant: ReplicantBrowser<ToastsReplicant> = nodecg.Replicant("toasts");
+const toastsReplicant = nodecg.Replicant<ToastsReplicant>("toasts");
 
 const bottomToast = document.getElementById("bottom")!;
 const leftToast = document.getElementById("left")!;

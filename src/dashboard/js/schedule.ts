@@ -1,33 +1,35 @@
-import { NodeCGBrowser, ReplicantBrowser } from "nodecg/types/browser";
 import { ScheduleReplicant } from "../../types/schemas";
 
 // NodeCG
-const scheduleReplicant: ReplicantBrowser<ScheduleReplicant> = nodecg.Replicant("schedule");
+const scheduleReplicant = nodecg.Replicant<ScheduleReplicant>("schedule");
 
 const button = document.getElementById("updateButton")!;
-const inputPairs = getInputPairs();
+const inputRows = getInputRows();
+
+class InputRow {
+  constructor(public leftInput: HTMLInputElement, public rightInput: HTMLInputElement) { }
+}
 
 button.addEventListener("click", updateSchedule);
 
 function updateSchedule() {
-    const scheduleEntries = [];
-    for (let pair of inputPairs) {
-        scheduleEntries.push([pair[0].value, pair[1].value])
-    }
+  const scheduleEntries = [];
+  for (let row of inputRows) {
+    scheduleEntries.push([row.leftInput.value, row.rightInput.value])
+  }
 
   scheduleReplicant.value = scheduleEntries;
 }
 
-function getInputPairs() {
-    const inputs = [...document.querySelectorAll("input")];
-    const pairs: string[] = inputs.reduce(function (result, _value, index, array) {
-        if (index % 2 === 0) {
-          result.push(array.slice(index, index + 2));
-        }
+function getInputRows() {
+  const inputs = Array.from(document.querySelectorAll("input"));
 
-        return result;
-      }, []);
-    return pairs;
+  let rows: InputRow[];
+  for (let i = 0; i < inputs.length; i += 2) {
+    rows.push(new InputRow(inputs[i], inputs[i + 1]))
+  }
+
+  return rows;
 }
 
 scheduleReplicant.on('change', (newValue) => {
@@ -36,10 +38,15 @@ scheduleReplicant.on('change', (newValue) => {
     return;
   }
 
+  if (newValue.length !== inputRows.length) {
+    console.error("The length of schedule entries does not match the number of input rows.");
+    return;
+  }
+
   for (let index = 0; index < newValue.length; index++) {
-      const inputPair = inputPairs[index];
-      const entry = newValue[index];
-      inputPair[0].value = entry[0];
-      inputPair[1].value = entry[1];
+    const row = inputRows[index];
+    const entry = newValue[index];
+    row.leftInput.value = entry?.[0] ?? '';
+    row.rightInput.value = entry?.[1] ?? '';
   }
 });
