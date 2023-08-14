@@ -1,13 +1,12 @@
 import { ScheduleReplicant } from "../../types/schemas";
-
-// NodeCG
 const scheduleReplicant = nodecg.Replicant<ScheduleReplicant>("schedule");
 
 const button = document.getElementById("updateButton")!;
 const inputRows = getInputRows();
 
-class InputRow {
-  constructor(public leftInput: HTMLInputElement, public rightInput: HTMLInputElement) { }
+interface InputRow {
+  leftInput: HTMLInputElement;
+  rightInput: HTMLInputElement;
 }
 
 button.addEventListener("click", updateSchedule);
@@ -24,9 +23,9 @@ function updateSchedule() {
 function getInputRows() {
   const inputs = Array.from(document.querySelectorAll("input"));
 
-  let rows: InputRow[];
+  let rows: InputRow[] = [];
   for (let i = 0; i < inputs.length; i += 2) {
-    rows.push(new InputRow(inputs[i], inputs[i + 1]))
+    rows.push({ leftInput: inputs[i], rightInput: inputs[i + 1]})
   }
 
   return rows;
