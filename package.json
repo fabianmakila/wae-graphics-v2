@@ -15,7 +15,7 @@
     "nodecg-cli": "^8.6.8",
     "parcel": "^2.9.3",
     "parcel-reporter-multiple-static-file-copier": "^1.0.5",
-    "postcss": "^8.4.24",
+    "postcss": "^8.4.31",
     "tailwindcss": "^3.3.2",
     "two.js": "^0.8.10"
   },
